@@ -4,9 +4,6 @@ terraform {
       source  = "hashicorp/azurerm"
       version = ">=3.0.0"
     }
-    akc = {
-      source = "arkiaconsulting/akc"
-    }
   }
 }
 

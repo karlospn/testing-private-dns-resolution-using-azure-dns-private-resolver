@@ -13,7 +13,7 @@ module "app_service_public_api" {
 
 
 ## Create private api app service
-module "app_service_public_api" {
+module "app_service_private_api" {
     source                              = "..//modules/linux_app_service"
     name                                = "pprivate-api"
     rg_name                             = azurerm_resource_group.rg_dns_test.name 

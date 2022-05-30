@@ -11,6 +11,11 @@ module "app_service_public_api" {
     tags                                = merge(var.default_tags, { "scope" = "public" })
 }
 
+## Create VNET Integration for public api app service
+resource "azurerm_app_service_virtual_network_swift_connection" "public_api_vnet_integration_connection" {
+  app_service_id  = module.app_service_public_api.linux_app_service_id
+  subnet_id       = azurerm_subnet.subnet_public_app_svc_vnet_integration.id
+}
 
 ## Create private api app service
 module "app_service_private_api" {

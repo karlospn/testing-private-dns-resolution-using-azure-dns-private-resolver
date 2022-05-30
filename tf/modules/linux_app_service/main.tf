@@ -8,7 +8,7 @@ terraform {
 }
 
 ## Create app service
-resource "azurerm_linux_web_app" "mc_app" {
+resource "azurerm_linux_web_app" "app_dns_test" {
   name                = "app-${var.name}-${var.project_name}-${var.environment}"
   resource_group_name = var.rg_name
   location            = var.rg_location

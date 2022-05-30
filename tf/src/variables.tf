@@ -47,3 +47,33 @@ variable "private_endpoints_subnet_cidr" {
     description = "The address space that is used the private endpoints subnet."
     type = string
 }
+
+variable "cosmos_mongo_database_throughput" {
+    description = "The throughput of the MongoDB database"
+    type = number
+}
+
+variable "vpn_gw_sku" {
+    description = "Configuration of the size and capacity of the virtual network gateway. Valid options are Basic, Standard, HighPerformance, UltraPerformance, ErGw1AZ, ErGw2AZ, ErGw3AZ, VpnGw1, VpnGw2, VpnGw3, VpnGw4,VpnGw5, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ,VpnGw4AZ and VpnGw5AZ and depend on the type, vpn_type and generation arguments. A PolicyBased gateway only supports the Basic sku. Further, the UltraPerformance sku is only supported by an ExpressRoute gateway."
+    type = string
+}
+
+variable "vpn_gw_client_cidr" {
+    description = "The address space out of which ip addresses for vpn clients will be taken."
+    type = string
+}
+
+variable "vpn_gw_aad_tenant" {
+    description = "AzureAD Tenant URL."
+    type = string
+}
+
+variable "vpn_gw_aad_audience" {
+    description = "The client id of the Azure VPN application."
+    type = string
+}
+
+variable "vpn_gw_aad_issuer" {
+    description = "The STS url for your tenant."
+    type = string
+}

@@ -12,6 +12,12 @@ resource "azurerm_subnet" "subnet_public_app_svc_vnet_integration" {
   resource_group_name  = azurerm_resource_group.rg_dns_test.name
   virtual_network_name = azurerm_virtual_network.vnet_dns_test.name
   address_prefixes     = [var.public_app_service_vnet_integration_subnet_cidr]
+  delegation {
+    name = "delegation"
+    service_delegation {
+      name = "Microsoft.Web/serverFarms"
+    }
+  }
 }
 
 ## Create subnet for private endpoints

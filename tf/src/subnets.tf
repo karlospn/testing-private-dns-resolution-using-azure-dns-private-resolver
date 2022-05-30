@@ -16,6 +16,7 @@ resource "azurerm_subnet" "subnet_public_app_svc_vnet_integration" {
     name = "delegation"
     service_delegation {
       name = "Microsoft.Web/serverFarms"
+       actions = [ "Microsoft.Network/virtualNetworks/subnets/action"]
     }
   }
 }
@@ -26,4 +27,33 @@ resource "azurerm_subnet" "subnet_private_endpoints" {
   resource_group_name  = azurerm_resource_group.rg_dns_test.name
   virtual_network_name = azurerm_virtual_network.vnet_dns_test.name
   address_prefixes     = [var.private_endpoints_subnet_cidr]
+}
+
+resource "azapi_resource" "subnet_dns_resolver_inbound_endpoint" {
+    type      = "Microsoft.Network/virtualNetworks/subnets@2020-11-01"
+    name      = "SubnetC"
+    parent_id = azurerm_virtual_network.vnet_dns_test.id
+  
+    depends_on = [
+        azurerm_virtual_network.vnet_dns_test
+    ]
+
+    body =  jsonencode({
+        properties = {
+          addressPrefix = var.dns_resolver_inbound_endpoint_subnet_cidr
+          serviceEndpoints = []
+          privateEndpointNetworkPolicies = "Enabled"
+          privateLinkServiceNetworkPolicies = "Enabled"
+          delegations = [
+            {
+                name = "delegation"
+                properties = {
+                    serviceName = "Microsoft.Network/dnsResolvers"
+                }
+            }
+          ]
+        }
+    })
+    
+    response_export_values = ["*"]
 }

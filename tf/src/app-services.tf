@@ -20,7 +20,7 @@ resource "azurerm_app_service_virtual_network_swift_connection" "public_api_vnet
 ## Create private api app service
 module "app_service_private_api" {
     source                              = "..//modules/linux_app_service"
-    name                                = "pprivate-api"
+    name                                = "private-api"
     rg_name                             = azurerm_resource_group.rg_dns_test.name 
     rg_location                         = azurerm_resource_group.rg_dns_test.location
     project_name                        = var.project_name

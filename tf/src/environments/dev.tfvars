@@ -21,6 +21,7 @@ vpn_gw_network_subnet_cidr = "10.18.254.0/27"
 vpn_gw_client_cidr = "172.18.254.0/24"
 public_app_service_vnet_integration_subnet_cidr = "10.18.1.0/24"
 private_endpoints_subnet_cidr = "10.18.2.0/24"
+dns_resolver_inbound_endpoint_subnet_cidr = "10.18.3.0/24"
 cosmos_mongo_database_throughput = 400
 vpn_gw_sku = "VpnGw1"
 vpn_gw_aad_tenant = "PUT-YOUR-AAD-TENANT-ID-HERE"

@@ -44,13 +44,18 @@ variable "public_app_service_vnet_integration_subnet_cidr" {
 }
 
 variable "private_endpoints_subnet_cidr" {
-    description = "The address space that is used the private endpoints subnet."
+    description = "The address space that is used for the private endpoints subnet."
     type = string
 }
 
 variable "cosmos_mongo_database_throughput" {
     description = "The throughput of the MongoDB database"
     type = number
+}
+
+variable "dns_resolver_inbound_endpoint_subnet_cidr" {
+    description = "The address space that is used for the azure resolver inbound endpoint subnet."
+    type = string
 }
 
 variable "vpn_gw_sku" {

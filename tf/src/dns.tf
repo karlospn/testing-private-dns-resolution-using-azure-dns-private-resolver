@@ -10,6 +10,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "link_dns_app_service" 
   resource_group_name = azurerm_resource_group.rg_dns_test.name
   private_dns_zone_name = azurerm_private_dns_zone.dns_app_service.name
   virtual_network_id = azurerm_virtual_network.vnet_dns_test.id
+  tags = merge(var.default_tags, { "scope" = "private" })
 }
 
 
@@ -25,5 +26,6 @@ resource "azurerm_private_dns_zone_virtual_network_link" "link_dns_cosmos_mongo"
   resource_group_name = azurerm_resource_group.rg_dns_test.name
   private_dns_zone_name = azurerm_private_dns_zone.dns_cosmos_mongo.name
   virtual_network_id = azurerm_virtual_network.vnet_dns_test.id
+  tags = merge(var.default_tags, { "scope" = "private" })
 }
 ## End Create private DNS zone for app services Block

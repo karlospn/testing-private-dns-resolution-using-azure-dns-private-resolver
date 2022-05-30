@@ -1,3 +1,13 @@
+variable "project_name" {
+    description = "The name of the project"
+    type        = string
+}
+
+variable "environment" {
+    description ="The environment name. Possible values are dev and pro"
+    type = string
+}
+
 variable "rg_name" {
     description = "Specifies the Name of the Resource Group within which the Private Endpoint should exist. Changing this forces a new resource to be created."
     type        = string

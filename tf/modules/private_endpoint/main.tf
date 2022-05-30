@@ -9,7 +9,7 @@ terraform {
 
 ## Create private endpoint
 resource "azurerm_private_endpoint" "private_endpoint_dns_test" {
-  name                = "private-endpoint-${var.private_endpoint_name}"
+  name                = "private-endpoint-${var.private_endpoint_name}-${var.project_name}-${var.environment}"
   location            = var.rg_location
   resource_group_name = var.rg_name
   subnet_id           = var.subnet_id

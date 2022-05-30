@@ -2,6 +2,8 @@
 module "private_api_app_service_private_endpoint" {
     source                              = "../modules/private_endpoint"
     private_endpoint_name               = "private-api"
+    project_name                        = var.project_name
+    environment                         = var.environment
     rg_name                             = azurerm_resource_group.rg_dns_test.name 
     rg_location                         = azurerm_resource_group.rg_dns_test.location
     subnet_id                           = azurerm_subnet.subnet_private_endpoints.id
@@ -16,6 +18,8 @@ module "private_api_app_service_private_endpoint" {
 module "cosmos_private_endpoint" {
     source                              = "../modules/private_endpoint"
     private_endpoint_name               = "cosmos-database"
+    project_name                        = var.project_name
+    environment                         = var.environment
     rg_name                             = azurerm_resource_group.rg_dns_test.name 
     rg_location                         = azurerm_resource_group.rg_dns_test.location
     subnet_id                           = azurerm_subnet.subnet_private_endpoints.id

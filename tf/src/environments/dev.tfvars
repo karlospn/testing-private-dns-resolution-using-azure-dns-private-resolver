@@ -16,7 +16,7 @@ default_tags = {
 } 
 service_plan_public_sku_name = "B2"
 service_plan_private_sku_name = "B2"
-vnet_cidr ="10.18.0.0/16"
+vnet_cidr = "10.18.0.0/16"
 vpn_gw_network_subnet_cidr = "10.18.254.0/27"
 vpn_gw_client_cidr = "172.18.254.0/24"
 public_app_service_vnet_integration_subnet_cidr = "10.18.1.0/24"

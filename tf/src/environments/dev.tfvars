@@ -24,4 +24,4 @@ private_endpoints_subnet_cidr = "10.18.2.0/24"
 cosmos_mongo_database_throughput = 400
 vpn_gw_sku = "VpnGw1"
 vpn_gw_aad_tenant = "PUT-YOUR-AAD-TENANT-ID-HERE"
-vpn_gw_aad_audience = "PUT-YOUR-AAD-APP-CLIENT-ID-HERE
+vpn_gw_aad_audience = "PUT-YOUR-AAD-APP-CLIENT-ID-HERE"

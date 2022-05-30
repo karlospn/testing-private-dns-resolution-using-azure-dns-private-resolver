@@ -72,8 +72,3 @@ variable "vpn_gw_aad_audience" {
     description = "The client id of the Azure VPN application."
     type = string
 }
-
-variable "vpn_gw_aad_issuer" {
-    description = "The STS url for your tenant."
-    type = string
-}

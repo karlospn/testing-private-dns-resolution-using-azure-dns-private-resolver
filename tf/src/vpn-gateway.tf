@@ -21,8 +21,8 @@ resource "azurerm_virtual_network_gateway" "vpn_gw_p2s" {
   vpn_client_configuration {
     address_space         = [var.vpn_gw_client_cidr]
     vpn_auth_types        = ["AAD"]
-    aad_tenant            = var.vpn_gw_aad_tenant
+    aad_tenant            = "https://login.microsoftonline.com/${var.vpn_gw_aad_tenant}/"
     aad_audience          = var.vpn_gw_aad_audience
-    aad_issuer            = var.vpn_gw_aad_issuer
+    aad_issuer            = "https://sts.windows.net/${var.vpn_gw_aad_tenant}"
   }
 }

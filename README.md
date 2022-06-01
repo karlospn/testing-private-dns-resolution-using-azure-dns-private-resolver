@@ -9,7 +9,7 @@ Here's a diagram of what we're going to build:
 ![Alt Text](https://raw.githubusercontent.com/karlospn/testing-private-dns-resolution-using-azure-dns-private-resolver/main/docs/architecture-diagram.png)
 
 
-Every resource in Azure is deployed using Terraform.    
+Every resource in this repository is deployed using Terraform.    
 This repository uses the following Terraform providers:
 - [AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) Terraform provider.
 - [AzApi](https://registry.terraform.io/providers/Azure/azapi/latest/docs) Terraform provider.

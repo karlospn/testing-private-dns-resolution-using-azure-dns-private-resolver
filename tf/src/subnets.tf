@@ -16,7 +16,6 @@ resource "azurerm_subnet" "subnet_public_app_svc_vnet_integration" {
     name = "delegation"
     service_delegation {
       name = "Microsoft.Web/serverFarms"
-       actions = [ "Microsoft.Network/virtualNetworks/subnets/action"]
     }
   }
 }

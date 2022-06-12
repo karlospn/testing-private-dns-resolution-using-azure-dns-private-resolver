@@ -14,7 +14,7 @@ This repository uses the following Terraform providers:
 - [AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs) Terraform provider.
 - [AzApi](https://registry.terraform.io/providers/Azure/azapi/latest/docs) Terraform provider.
 
-The AzApi provider is needed because right now there is no way to dpeloy an Azure DNS Private Resolver using the official AzureRM provider.
+The AzApi provider is needed because right now there is no way to deploy an Azure DNS Private Resolver using the official AzureRM provider.
 
 # How to deploy it
 
